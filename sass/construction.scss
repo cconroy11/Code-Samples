@@ -1,0 +1,216 @@
+//===================================================
+//-----------------------------------------
+// CONSTRUCTION
+//----------------------------------
+
+//------------------------------
+// LIST VIEW
+
+
+.bc-construction-section__list-view {
+	
+	.bc-table {
+		
+		//desktop only
+		@include breakpoint(desktop){
+			.cb-button__edit {
+				opacity: 0.85;
+			}
+		}
+		
+		//anything under 900
+		@include breakpoint(900px){
+			thead {
+				th:first-child{
+					width: 80px;
+				}
+				
+				th:nth-child(3){
+					width: 60px;
+				}
+				
+				th:nth-child(4){
+					width: 20%;
+				}
+				
+				th:last-child{
+					width: 70px;
+				}
+				
+			}	
+		}
+		
+	}
+	
+}
+
+//------------------------------
+// DETAIL VIEW
+
+.bc-construction-section__detail-view {
+	.bc-group__actions {
+		
+		a {
+			display: inline-block;
+		}
+		
+		@include breakpoint(1101px){
+			a + a {
+				margin-left: 10px !important;
+			}
+		}
+		
+		@include breakpoint(0px,'max-width:1100px'){
+			//reset the group
+			display: block !important;
+			
+			// buttons
+			
+			a + a {
+				margin-left: 0px;
+			}
+			
+			.bc-button__edit-details {
+				width: 100%;
+				display: block;
+			}
+			
+			.bc-button__edit-phases,
+			.bc-button__archive {
+				width: 48%;
+				margin: 10px 0 0 0;
+			}
+
+			.bc-button__archive {
+				margin-left: 2% !important;
+			}
+		}
+		
+	}
+}
+
+#project-details,
+#project-managers {
+	.bc-card-component:last-child,
+	p:last-child{
+		margin-bottom: 0;
+	}
+}
+
+// Phases only
+.bc-construction-phase {
+	
+	&__table-vendor-preview {
+		@include breakpoint(900px){
+			thead {
+				th:first-child{
+					width: 30%;
+				}
+				
+				th:nth-child(2),
+				th:last-child{
+					width: 70px;
+				}
+				
+				th:nth-child(3),
+				th:nth-child(4){
+					width: 80px;
+				}
+				
+				
+			}	
+		}
+	}
+	
+	&__table-vendor-add {
+		
+		@include breakpoint(900px){
+			thead {
+				th:first-child{
+					width: 50%;
+				}
+				
+				th:nth-child(2) {
+					width: 30%;
+				}
+				
+				th:last-child{
+					width: 80px;
+					min-width: 60px;
+				}
+				
+			}	
+		}
+		
+	}
+	
+}
+
+// work orders only
+.bc-construction-work-order {
+	
+	&__table-invoices {
+		
+		@include breakpoint(900px){
+			thead {
+				th:first-child{
+					width: 30%;
+				}
+				
+				th:nth-child(2){
+					width: 80px;
+				}
+				
+				th:last-child{
+					width: 70px;
+				}
+				
+			}	
+		}
+		
+	}
+	
+	&__table-vendor-add {
+		
+		@include breakpoint(900px){
+			thead {
+				th:first-child{
+					width: 50%;
+				}
+				
+				th:nth-child(2) {
+					width: 30%;
+				}
+				
+				th:last-child{
+					width: 80px;
+					min-width: 60px;
+				}
+				
+			}	
+		}
+		
+	}
+	
+}
+
+
+.bc-construction-section__phases-edit-view {
+	
+	.single-phase-item {
+        cursor: move;
+        border-bottom: 1px solid #c2cfd6;
+		background: white;
+		
+		&.sortable-chosen{
+			background: $cb-beige;
+		}	
+		
+    }
+	
+    .current-homebuilder-phases {
+        max-height: 600px;
+        overflow-y: auto;        
+    }
+	
+}
